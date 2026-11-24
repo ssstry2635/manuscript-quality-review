@@ -1,0 +1,119 @@
+{
+  "case_id": "fictional-manuscript",
+  "sources": [
+    {
+      "id": "doc",
+      "path": "source.txt"
+    }
+  ],
+  "claims": [
+    {
+      "id": "abstract",
+      "value": "12.0",
+      "places": 1,
+      "scope": {
+        "population": "complete sample",
+        "outcome": "change",
+        "timepoint": "end",
+        "analysis": "same analysis",
+        "unit": "%"
+      },
+      "anchor": {
+        "source_id": "doc",
+        "start": 2,
+        "end": 2,
+        "quote": "12.0%"
+      }
+    },
+    {
+      "id": "table",
+      "value": "14.0",
+      "places": 1,
+      "scope": {
+        "population": "complete sample",
+        "outcome": "change",
+        "timepoint": "end",
+        "analysis": "same analysis",
+        "unit": "%"
+      },
+      "anchor": {
+        "source_id": "doc",
+        "start": 3,
+        "end": 3,
+        "quote": "14.0%"
+      }
+    },
+    {
+      "id": "subgroup",
+      "value": 12,
+      "places": 0,
+      "scope": {
+        "population": "subgroup",
+        "outcome": "change",
+        "timepoint": "end",
+        "analysis": "same analysis",
+        "unit": "%"
+      },
+      "anchor": {
+        "source_id": "doc",
+        "start": 4,
+        "end": 4,
+        "quote": "12%"
+      }
+    },
+    {
+      "id": "cited",
+      "anchor": {
+        "source_id": "doc",
+        "start": 5,
+        "end": 5,
+        "quote": "proved benefit for the complete sample"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "abstract-table",
+      "left": "abstract",
+      "right": "table"
+    },
+    {
+      "id": "abstract-subgroup",
+      "left": "abstract",
+      "right": "subgroup"
+    }
+  ],
+  "citations": [
+    {
+      "id": "ref-1",
+      "claim_id": "cited",
+      "reference": null,
+      "reason": "Cited study not provided in this demonstration."
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "type": "fact_error",
+      "severity": "moderate",
+      "status": "confirmed",
+      "rationale": "Same endpoint and analysis give different rounded values.",
+      "impact": "The reported magnitude is inconsistent.",
+      "revision": "Reconcile both displays against the analysis output.",
+      "anchors": [
+        {
+          "source_id": "doc",
+          "start": 2,
+          "end": 2,
+          "quote": "12.0%"
+        },
+        {
+          "source_id": "doc",
+          "start": 3,
+          "end": 3,
+          "quote": "14.0%"
+        }
+      ]
+    }
+  ]
+}
